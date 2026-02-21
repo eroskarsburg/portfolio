@@ -1,7 +1,94 @@
-﻿@page "/"
+@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Eros Karsburg - Software Developer</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="pagina-home">
+    <section class="hero" id="sobre">
+        <div class="hero-imagem">
+            <img src="images/me.png" alt="Eros Karsburg" />
+        </div>
+        <div class="hero-conteudo">
+            <p >Hello! I'm <span class="hero-saudacao">Eros Karsburg</span></p>
+            <h1 class="hero-titulo">
+                <span class="hero-titulo-grande">.NET Software Developer</span>
+            </h1>
+            <p class="hero-descricao">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+            <a class="btn-hero link-sem-animacao" href="#servicos">ABOUT ME</a>
+        </div>
+    </section>
 
-Welcome to your new app.
+    <section class="servicos" id="servicos">
+        <div class="card-servico">
+            <div class="card-icone card-icone-ui"></div>
+            <h3 class="card-titulo">UI Design</h3>
+            <p class="card-descricao">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+            </p>
+            <a class="card-link" href="#">KNOW MORE &rarr;</a>
+        </div>
+        <div class="card-servico card-servico-destaque">
+            <div class="card-icone card-icone-product"></div>
+            <h3 class="card-titulo">Product Design</h3>
+            <p class="card-descricao">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+            </p>
+            <a class="card-link" href="#">KNOW MORE &rarr;</a>
+        </div>
+        <div class="card-servico">
+            <div class="card-icone card-icone-branding"></div>
+            <h3 class="card-titulo">Branding</h3>
+            <p class="card-descricao">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+            </p>
+            <a class="card-link" href="#">KNOW MORE &rarr;</a>
+        </div>
+    </section>
+
+    <section class="projetos-destaque" id="projetos">
+        <div class="projetos-tabs">
+            <span class="projeto-tab ativo">Completed Projects</span>
+            <span class="projeto-tab">Achievements</span>
+        </div>
+        <div class="projetos-cabecalho">
+            <div>
+                <h2 class="projetos-titulo">FEATURED PROJECTS</h2>
+                <p class="projetos-subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
+            </div>
+            <a class="btn-projetos link-sem-animacao" href="#">VIEW ALL</a>
+        </div>
+        <div class="projetos-grid">
+            <div class="projeto-card">
+                <div class="projeto-imagem projeto-img-1"></div>
+                <h3 class="projeto-nome">The Vintage</h3>
+                <a class="projeto-link" href="#">KNOW MORE &rarr;</a>
+            </div>
+            <div class="projeto-card">
+                <div class="projeto-imagem projeto-img-2"></div>
+                <h3 class="projeto-nome">Foodasa</h3>
+                <a class="projeto-link" href="#">KNOW MORE &rarr;</a>
+            </div>
+            <div class="projeto-card">
+                <div class="projeto-imagem projeto-img-3"></div>
+                <h3 class="projeto-nome">Marco Accent</h3>
+                <a class="projeto-link" href="#">KNOW MORE &rarr;</a>
+            </div>
+            <div class="projeto-card">
+                <div class="projeto-imagem projeto-img-4"></div>
+                <h3 class="projeto-nome">Mozaik</h3>
+                <a class="projeto-link" href="#">KNOW MORE &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-secao" id="contato">
+        <div class="cta-conteudo">
+            <h2 class="cta-titulo">Let's work together on your next project</h2>
+            <p class="cta-descricao">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+        </div>
+        <a class="btn-cta-secao link-sem-animacao" href="#contato">CONTACT</a>
+    </section>
+</div>

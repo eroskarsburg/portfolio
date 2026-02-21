@@ -1,15 +1,57 @@
+:root {
+    --fundo-escuro: #1a1a1a;
+    --fundo-card: #2c2c2c;
+    --acento-vermelho: #cd1630;
+    --acento-claro: #ffffff;
+    --texto-muted: rgba(255, 255, 255, 0.7);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--fundo-escuro);
+.font-titulo {
+    font-family: 'Playfair Display', serif;
+}
+
+    color: var(--acento-claro);
 }
 
 a, .btn-link {
-    color: #006bb7;
+    color: var(--acento-vermelho);
+    text-decoration: none;
+}
+
+a:hover, .btn-link:hover {
+    color: var(--acento-claro);
+}
+
+a:not(.link-sem-animacao) {
+    position: relative;
+}
+
+a:not(.link-sem-animacao)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+a:not(.link-sem-animacao):hover::after {
+    width: 100%;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    color: white;
+    background-color: var(--acento-vermelho);
+    border-color: var(--acento-vermelho);
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
