@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    padding: 1.1rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -10,52 +11,43 @@
 .logo-portfolio {
     display: flex;
     align-items: center;
+    gap: 0.7rem;
     text-decoration: none;
+    color: var(--acento-claro);
 }
 
-.logo-portfolio:hover .logo-icone {
-    border-color: var(--acento-vermelho);
+.logo-portfolio:hover {
+    color: var(--acento-claro);
 }
 
 .logo-icone {
     display: block;
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     border: 2px solid var(--acento-vermelho);
     border-radius: 50% 50% 0 50%;
     transform: rotate(-45deg);
+    flex-shrink: 0;
+}
+
+.logo-texto {
+    font-family: var(--font-corpo);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .links-nav {
     display: flex;
-    gap: 2rem;
+    gap: 1.75rem;
     align-items: center;
-    position: relative;
 }
 
-::deep .link-nav {
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 700;
-::deep .link-nav::after {
-    content: '';
-::deep .link-nav:hover::after {
-    width: 100%;
-}
-
-
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--acento-claro);
-    transition: width 0.3s ease;
-}
-    letter-spacing: 0.15em;
+.link-nav {
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--acento-claro);
 }
-
 
 @media (max-width: 900px) {
     .links-nav {

@@ -7,19 +7,13 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: rgba(13, 13, 13, 0.9);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(231, 47, 73, 0.2);
+    background-color: rgba(12, 12, 12, 0.72);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--borda-sutil);
 }
 
 .conteudo-principal {
     flex: 1;
-}
-
-@media (max-width: 640.98px) {
-    .header-portfolio {
-        padding: 0 1rem;
-    }
 }
 
 #blazor-error-ui {

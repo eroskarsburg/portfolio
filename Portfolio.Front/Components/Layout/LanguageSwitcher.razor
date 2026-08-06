@@ -1,0 +1,63 @@
+@inject LocaleService Locale
+@inject IJSRuntime Js
+@implements IDisposable
+
+<div class="lang-switcher">
+    <button type="button"
+            class="lang-btn @(Locale.Culture == AppStrings.PtBr ? "ativo" : null)"
+            @onclick="() => ChangeAsync(AppStrings.PtBr)">
+        @Locale.T("Lang.Pt")
+    </button>
+    <span class="lang-sep">|</span>
+    <button type="button"
+            class="lang-btn @(Locale.Culture == AppStrings.EnUs ? "ativo" : null)"
+            @onclick="() => ChangeAsync(AppStrings.EnUs)">
+        @Locale.T("Lang.En")
+    </button>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+
+        try
+        {
+            var stored = await Js.InvokeAsync<string?>("portfolioLocale.get");
+            if (!string.IsNullOrWhiteSpace(stored))
+            {
+                Locale.SetCulture(stored);
+            }
+        }
+        catch (JSException)
+        {
+        }
+    }
+
+    private async Task ChangeAsync(string culture)
+    {
+        Locale.SetCulture(culture);
+        try
+        {
+            await Js.InvokeVoidAsync("portfolioLocale.set", Locale.Culture);
+        }
+        catch (JSException)
+        {
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        Locale.OnChange += OnLocaleChanged;
+    }
+
+    private void OnLocaleChanged() => InvokeAsync(StateHasChanged);
+
+    public void Dispose()
+    {
+        Locale.OnChange -= OnLocaleChanged;
+    }
+}
