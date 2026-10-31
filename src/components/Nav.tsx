@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLang } from "./LangProvider";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Nav() {
   const { d, lang, setLang } = useLang();
@@ -32,17 +33,20 @@ export function Nav() {
           ))}
         </nav>
 
-        <div className="flex font-mono text-xs">
-          {(["pt", "en"] as const).map((l) => (
-            <button
-              key={l}
-              type="button"
-              onClick={() => setLang(l)}
-              className={`px-2.5 py-1.5 uppercase transition-colors ${lang === l ? "bg-red text-bg" : "text-muted hover:text-ink"}`}
-            >
-              {l}
-            </button>
-          ))}
+        <div className="flex items-center gap-3">
+          <div className="flex font-mono text-xs">
+            {(["pt", "en"] as const).map((l) => (
+              <button
+                key={l}
+                type="button"
+                onClick={() => setLang(l)}
+                className={`px-2.5 py-1.5 uppercase transition-colors ${lang === l ? "bg-red text-bg" : "text-muted hover:text-ink"}`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+          <ThemeToggle />
         </div>
       </div>
     </header>

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-:root {
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #0a0909;
   --bg-2: #121010;
   --card: #171414;
@@ -9,6 +11,23 @@
   --line: rgba(243, 238, 231, 0.09);
   --red: #e0213a;
   --red-deep: #8f0f20;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f1ea;
+  --bg-2: #eee7dc;
+  --card: #fffaf3;
+  --ink: #1a1514;
+  --muted: #655c54;
+  --line: rgba(26, 21, 20, 0.13);
+  --red: #c8162f;
+  --red-deep: #8f0f20;
+}
+
+[data-theme="light"] .icon-sun,
+[data-theme="dark"] .icon-moon {
+  display: none;
 }
 
 @theme inline {

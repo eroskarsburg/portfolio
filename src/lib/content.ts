@@ -12,7 +12,7 @@ export const profile = {
 
 export const ui = {
   pt: {
-    nav: { about: "Sobre", experience: "Experiência", skills: "Skills", education: "Formação", contact: "Contato" },
+    nav: { about: "Sobre", experience: "Experiência", skills: "Skills", education: "Formação", contact: "Contato", theme: "Alternar tema claro/escuro" },
     hero: {
       title: "Full Stack Software Engineer · .NET / C#",
       headline: "Aplicações web, APIs e backoffices para produtos de pagamento.",
@@ -53,7 +53,7 @@ export const ui = {
     },
   },
   en: {
-    nav: { about: "About", experience: "Experience", skills: "Skills", education: "Education", contact: "Contact" },
+    nav: { about: "About", experience: "Experience", skills: "Skills", education: "Education", contact: "Contact", theme: "Toggle light/dark theme" },
     hero: {
       title: "Full Stack Software Engineer · .NET / C#",
       headline: "Web applications, APIs and back offices for payment products.",
