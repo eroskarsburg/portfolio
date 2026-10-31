@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
-import { t, type Dict, type Lang } from "@/lib/content";
+import { ui, type Dict, type Lang } from "@/lib/content";
 
 const STORAGE_KEY = "portfolio-lang";
 
@@ -9,15 +9,12 @@ type Ctx = {
   lang: Lang;
   d: Dict;
   setLang: (lang: Lang) => void;
-  terminalOpen: boolean;
-  setTerminalOpen: (open: boolean) => void;
 };
 
 const LangContext = createContext<Ctx | null>(null);
 
 export function LangProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("pt");
-  const [terminalOpen, setTerminalOpen] = useState(false);
 
   useEffect(() => {
     try {
@@ -42,11 +39,7 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
     } catch {}
   }, []);
 
-  return (
-    <LangContext.Provider value={{ lang, d: t[lang], setLang, terminalOpen, setTerminalOpen }}>
-      {children}
-    </LangContext.Provider>
-  );
+  return <LangContext.Provider value={{ lang, d: ui[lang], setLang }}>{children}</LangContext.Provider>;
 }
 
 export function useLang() {

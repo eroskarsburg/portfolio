@@ -1,52 +1,54 @@
 "use client";
 
-import { motion } from "motion/react";
-import { education } from "@/lib/content";
+import { education, projects, profile } from "@/lib/content";
 import { useLang } from "./LangProvider";
-import { Eyebrow, Reveal } from "./ui";
+import { Section } from "./Section";
 
 export function Education() {
   const { d, lang } = useLang();
   return (
-    <section id="education" className="border-t border-line bg-bg-2 py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <Eyebrow>{d.edu.eyebrow}</Eyebrow>
-        <div className="mt-10 border-t border-line">
-          {education.map((e, i) => (
-            <Reveal key={e.school} delay={i * 0.06}>
-              <div className="group grid items-center gap-4 border-b border-line py-8 transition-colors hover:bg-bg sm:grid-cols-12 sm:px-4">
-                <div className="font-mono text-xs uppercase tracking-widest text-muted sm:col-span-2">
-                  {e.period}
-                  {e.progress < 1 && (lang === "pt" ? "presente" : "present")}
-                </div>
-                <div className="sm:col-span-6">
-                  <h3 className="font-display text-2xl font-bold tracking-tight transition-colors group-hover:text-red sm:text-4xl">
-                    {e.title[lang]}
-                  </h3>
-                  <p className="mt-1 text-muted">
-                    {e.school} · {e.place}
-                  </p>
-                </div>
-                <div className="sm:col-span-4">
-                  <div className="flex justify-between font-mono text-xs text-muted">
-                    <span>{e.note[lang]}</span>
-                    <span className={e.progress < 1 ? "text-red" : "text-green"}>{Math.round(e.progress * 100)}%</span>
-                  </div>
-                  <div className="mt-2 h-1 bg-line">
-                    <motion.div
-                      className={`h-full origin-left ${e.progress < 1 ? "bg-red" : "bg-green"}`}
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: e.progress }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+    <Section id="education" eyebrow={d.education.eyebrow} title={d.education.title} tone="alt">
+      <div className="divide-y divide-line border-y border-line">
+        {education.map((e) => (
+          <div key={e.school} className="grid gap-2 py-6 md:grid-cols-12 md:gap-6">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted md:col-span-3 md:pt-1.5">{e.period[lang]}</p>
+            <div className="md:col-span-9">
+              <h3 className="font-display text-xl font-bold sm:text-2xl">{e.title[lang]}</h3>
+              <p className="mt-1 text-muted">
+                {e.school} · {e.place}
+              </p>
+              {e.note && <p className="mt-1 text-sm text-muted/80">{e.note[lang]}</p>}
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
+  );
+}
+
+export function Projects() {
+  const { d, lang } = useLang();
+  return (
+    <Section id="projects" eyebrow={d.projects.eyebrow} title={d.projects.title}>
+      <ul className="grid gap-4 sm:grid-cols-2">
+        {projects.map((p) => (
+          <li key={p.name}>
+            <a
+              href={`${profile.github}/${p.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-full flex-col border border-line bg-card p-6 transition-colors hover:border-red/60"
+            >
+              <span className="font-mono text-lg font-bold group-hover:text-red">{p.name}</span>
+              <span className="mt-2 flex-1 text-sm leading-relaxed text-muted">{p.desc[lang]}</span>
+              <span className="mt-5 font-mono text-xs uppercase tracking-widest text-muted">{p.lang}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href={profile.github} target="_blank" rel="noopener noreferrer" className="mt-8 inline-block font-mono text-sm text-red hover:text-ink">
+        {d.projects.all} ↗
+      </a>
+    </Section>
   );
 }

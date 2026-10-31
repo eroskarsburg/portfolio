@@ -1,15 +1,27 @@
 # Eros Karsburg — Portfolio
 
-Portfólio pessoal de **Eros Karsburg**, Full Stack Software Engineer (.NET / C#).
+Portfólio pessoal de **Eros Karsburg**, Full Stack Software Engineer (.NET / C#), com foco na experiência profissional e no currículo.
 
-Construído do zero com **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS 4** e **Motion**.
+Feito com **Next.js 16 (App Router)**, **React 19**, **TypeScript** e **Tailwind CSS 4**.
 
-## Destaques
+## Seções
 
-- **Retrato em ASCII** renderizado em `<canvas>` a partir da foto, com equalização de histograma e uma lente "raio-x" que segue o mouse/toque e revela a foto real.
-- **Simulador de transações ao vivo** — um pacote percorre App → API .NET → Regras → Adquirente → Emissor e volta aprovado/negado, com `transaction.log` e métricas.
-- **Experiência como `git log`** — cada cargo é um commit expansível.
-- **Stack como `.csproj`** com `PackageReference` animados.
-- **Atividade recente do GitHub** buscada em tempo real da API pública.
-- **Terminal interativo** — aperte <kbd>`</kbd> ou <kbd>Ctrl</kbd>+<kbd>K</kbd> (`help`, `whoami`, `experience`, `goto projects`, `sudo hire eros`…).
-- Bilíngue **PT / EN** (persistido em `localStorage`), boot screen, cursor customizado, film grain, `prefers-reduced-motion` respeitado.
+Hero · Sobre · Experiência · Skills · Formação · Projetos · Contato — em português e inglês (PT/EN).
+
+## Rodando
+
+```bash
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # build de produção
+npm run start
+```
+
+## Editando o conteúdo
+
+Todo o texto (PT/EN), cargos, skills, formação e projetos ficam em `src/lib/content.ts`.
+As cores e fontes ficam em `src/app/globals.css` e `src/app/layout.tsx`.
+
+## Deploy
+
+Pronto para a [Vercel](https://vercel.com/new): importe o repositório, sem configuração extra.

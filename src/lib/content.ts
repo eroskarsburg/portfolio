@@ -1,319 +1,272 @@
 export type Lang = "pt" | "en";
+type L = Record<Lang, string>;
 
 export const profile = {
   name: "Eros Karsburg",
   fullName: "Eros Karsburg Dias da Rosa",
   email: "eroskarsburg@gmail.com",
   github: "https://github.com/eroskarsburg",
-  githubUser: "eroskarsburg",
   linkedin: "https://www.linkedin.com/in/eros-karsburg-05630b221/",
   location: "Canoas, RS — Brasil",
-  timezone: "America/Sao_Paulo",
 };
 
-export const marquee = [
-  "C#",
-  ".NET",
-  "ASP.NET Core",
-  "Blazor",
-  "Flutter",
-  "Dart",
-  "SQL Server",
-  "PostgreSQL",
-  "MySQL",
-  "JavaScript",
-  "Python",
-  "REST APIs",
-  "Clean Code",
-  "Scrum",
-];
+export const ui = {
+  pt: {
+    nav: { about: "Sobre", experience: "Experiência", skills: "Skills", education: "Formação", contact: "Contato" },
+    hero: {
+      title: "Full Stack Software Engineer · .NET / C#",
+      headline: "Aplicações web, APIs e backoffices para produtos de pagamento.",
+      sub: "Mais de 3 anos de experiência em .NET e C#. Conduzo integrações com parceiros, refatoro aplicações e crio novas interfaces em sistemas de pagamento de missão crítica.",
+      ctaExperience: "Ver experiência",
+      ctaContact: "Entrar em contato",
+      facts: [
+        { label: "Experiência", value: "3+ anos com .NET e C#" },
+        { label: "Foco", value: "Web apps · APIs · Backoffices" },
+        { label: "Domínio", value: "Sistemas de pagamento" },
+        { label: "Formação", value: "Ciência da Computação (7º sem.)" },
+      ],
+    },
+    about: {
+      eyebrow: "Sobre",
+      title: "Resumo",
+      body: [
+        "Full Stack Software Engineer com mais de 3 anos de experiência em .NET e C#, especializado em aplicações web, APIs e sistemas de pagamento de missão crítica.",
+        "Sólida vivência em arquitetura e desenvolvimento de software, liderança técnica e mentoria de time, com foco em qualidade de código, escalabilidade e boas práticas. Experiência com Scrum, integrações com terceiros e ambientes de alta disponibilidade.",
+      ],
+    },
+    experience: {
+      eyebrow: "Experiência",
+      title: "Experiência profissional",
+      company: "Rodosoft Tecnologia",
+      companyNote: "Presencial · desde dezembro de 2021",
+      companySub: "Três cargos na mesma empresa, de estagiário de suporte a desenvolvedor.",
+      tools: "Ferramentas",
+      current: "Atual",
+    },
+    skills: { eyebrow: "Skills", title: "Tecnologias e ferramentas" },
+    education: { eyebrow: "Formação", title: "Formação acadêmica", present: "presente" },
+    projects: { eyebrow: "GitHub", title: "Projetos pessoais e acadêmicos", all: "Ver todos os repositórios" },
+    contact: {
+      eyebrow: "Contato",
+      title: "Vamos conversar?",
+      sub: "Aberto a boas conversas sobre .NET, APIs, backoffices e sistemas de pagamento.",
+    },
+  },
+  en: {
+    nav: { about: "About", experience: "Experience", skills: "Skills", education: "Education", contact: "Contact" },
+    hero: {
+      title: "Full Stack Software Engineer · .NET / C#",
+      headline: "Web applications, APIs and back offices for payment products.",
+      sub: "3+ years of experience with .NET and C#. I lead partner integrations, refactor applications and build new interfaces for mission-critical payment systems.",
+      ctaExperience: "See experience",
+      ctaContact: "Get in touch",
+      facts: [
+        { label: "Experience", value: "3+ years with .NET and C#" },
+        { label: "Focus", value: "Web apps · APIs · Back offices" },
+        { label: "Domain", value: "Payment systems" },
+        { label: "Education", value: "Computer Science (7th sem.)" },
+      ],
+    },
+    about: {
+      eyebrow: "About",
+      title: "Summary",
+      body: [
+        "Full Stack Software Engineer with over 3 years of experience in .NET and C#, specializing in web applications, APIs and mission-critical payment systems.",
+        "Strong hands-on background in software architecture, development, technical leadership and team mentoring, with a focus on code quality, scalability and best practices. Experienced with Scrum, third-party integrations and high-availability environments.",
+      ],
+    },
+    experience: {
+      eyebrow: "Experience",
+      title: "Professional experience",
+      company: "Rodosoft Tecnologia",
+      companyNote: "On-site · since December 2021",
+      companySub: "Three roles at the same company, from support intern to developer.",
+      tools: "Tools",
+      current: "Current",
+    },
+    skills: { eyebrow: "Skills", title: "Technologies and tools" },
+    education: { eyebrow: "Education", title: "Education", present: "present" },
+    projects: { eyebrow: "GitHub", title: "Personal and academic projects", all: "See all repositories" },
+    contact: {
+      eyebrow: "Contact",
+      title: "Let's talk?",
+      sub: "Open to good conversations about .NET, APIs, back offices and payment systems.",
+    },
+  },
+} as const;
 
-export type Job = {
-  hash: string;
-  branch: string;
-  role: Record<Lang, string>;
-  period: Record<Lang, string>;
-  tags: string[];
-  bullets: Record<Lang, { title: string; body: string }[]>;
+export type Dict = (typeof ui)[Lang];
+
+export type Role = {
+  title: L;
+  period: L;
+  current?: boolean;
+  intro?: L;
+  groups?: { title: L; body: L }[];
+  bullets?: L[];
+  tools?: string[];
 };
 
-export const jobs: Job[] = [
+export const roles: Role[] = [
   {
-    hash: "a7f3c91",
-    branch: "HEAD -> developer",
-    role: { pt: "Software Developer", en: "Software Developer" },
-    period: { pt: "mar 2023 — presente", en: "Mar 2023 — present" },
-    tags: ["C#", ".NET", "ASP.NET MVC", "Web API", "Flutter", "Dart", "SQL Server", "MySQL", "PostgreSQL", "jQuery"],
-    bullets: {
-      pt: [
-        { title: "Fluxo de pagamento", body: "Ownership completo de um novo fluxo de pagamento: integração com nova adquirente, regras de negócio complexas e consumo de APIs externas em .NET/C#." },
-        { title: "Mobile", body: "Contribuição ativa no app Android principal da empresa: fluxos ponta a ponta de compra, estorno e recuperação de tickets." },
-        { title: "Web Apps & APIs", body: "Desenvolvimento e manutenção de ASP.NET Core Web Apps e Web APIs com foco em arquitetura, performance e escalabilidade." },
-        { title: "Refatoração", body: "Refatorações estruturais em APIs RESTful aplicando Clean Code para legibilidade e manutenibilidade." },
-        { title: "Bancos de dados", body: "Criação, otimização e manutenção de queries SQL em MySQL, SQL Server e PostgreSQL." },
-        { title: "Mentoria", body: "Suporte técnico a estagiários, incentivando boas práticas e crescimento técnico." },
-      ],
-      en: [
-        { title: "Payment flow", body: "Full ownership of a new payment flow: integrating a new acquirer, complex business rules and external API consumption with .NET/C#." },
-        { title: "Mobile", body: "Active contributor to the company's main Android app: end-to-end purchase, refund and ticket recovery flows." },
-        { title: "Web Apps & APIs", body: "Building and maintaining ASP.NET Core Web Apps and Web APIs with a focus on architecture, performance and scalability." },
-        { title: "Refactoring", body: "Structural refactoring of RESTful APIs applying Clean Code for readability and maintainability." },
-        { title: "Databases", body: "Creating, optimizing and maintaining SQL queries on MySQL, SQL Server and PostgreSQL." },
-        { title: "Mentoring", body: "Technical support for interns, fostering best practices and technical growth." },
-      ],
-    },
+    title: { pt: "Software Developer", en: "Software Developer" },
+    period: { pt: "março de 2023 — presente", en: "March 2023 — present" },
+    current: true,
+    groups: [
+      {
+        title: { pt: "Integrações de pagamento", en: "Payment integrations" },
+        body: {
+          pt: "Condução de novas integrações nos produtos de pagamento. Ownership completo de um novo fluxo de pagamento, incluindo a integração com uma nova adquirente, regras de negócio complexas e consumo de APIs externas em .NET e C#.",
+          en: "Leading new integrations in the payment products. Full ownership of a new payment flow, including the integration of a new payment acquirer, complex business rules and consumption of external APIs using .NET and C#.",
+        },
+      },
+      {
+        title: { pt: "Parceiros e outros times", en: "Partners and other teams" },
+        body: {
+          pt: "Contato direto com as equipes técnicas dos parceiros para alinhar os detalhes das integrações e viabilizar as entregas, além de trabalho próximo com outros times de desenvolvimento da empresa.",
+          en: "Direct contact with the partners' technical teams to align integration details and make deliveries possible, plus close work with other development teams inside the company.",
+        },
+      },
+      {
+        title: { pt: "Web apps e backoffices", en: "Web apps and back offices" },
+        body: {
+          pt: "Desenvolvimento e manutenção de aplicações ASP.NET Core e ASP.NET MVC, incluindo backoffices, e criação de novas interfaces.",
+          en: "Building and maintaining ASP.NET Core and ASP.NET MVC web applications, including back offices, and creating new interfaces.",
+        },
+      },
+      {
+        title: { pt: "APIs", en: "APIs" },
+        body: {
+          pt: "Desenvolvimento e manutenção de ASP.NET Core Web APIs RESTful, seguindo boas práticas de arquitetura, performance e escalabilidade.",
+          en: "Building and maintaining RESTful ASP.NET Core Web APIs following best practices for architecture, performance and scalability.",
+        },
+      },
+      {
+        title: { pt: "Refatoração e qualidade", en: "Refactoring and quality" },
+        body: {
+          pt: "Refatorações estruturais em APIs REST e aplicações web aplicando Clean Code, para melhorar a legibilidade e a manutenibilidade.",
+          en: "Structural refactoring of RESTful APIs and web applications applying Clean Code principles to improve readability and maintainability.",
+        },
+      },
+      {
+        title: { pt: "Bancos de dados", en: "Databases" },
+        body: {
+          pt: "Criação, otimização e manutenção de queries SQL usadas por APIs e aplicações web, em MySQL, SQL Server e PostgreSQL.",
+          en: "Creating, optimizing and maintaining SQL queries used across APIs and web applications on MySQL, SQL Server and PostgreSQL.",
+        },
+      },
+      {
+        title: { pt: "Documentação", en: "Documentation" },
+        body: {
+          pt: "Changelogs de versão, documentação detalhada de projetos e manuais de regras de negócio.",
+          en: "Version changelogs, detailed project documentation and business rules manuals.",
+        },
+      },
+      {
+        title: { pt: "Time e metodologia", en: "Team and methodology" },
+        body: {
+          pt: "Suporte técnico e mentoria a estagiários. Participação ativa em times ágeis com Scrum, no planejamento e na entrega contínua.",
+          en: "Technical support and mentoring for interns. Active participation in Scrum-based agile teams, contributing to planning and continuous delivery.",
+        },
+      },
+    ],
+    bullets: [
+      {
+        pt: "Também contribuí no app Android da empresa, em fluxos de compra, estorno e recuperação de tickets.",
+        en: "I have also contributed to the company's Android app, on purchase, refund and ticket recovery flows.",
+      },
+    ],
+    tools: ["C#", ".NET Framework", ".NET", "ASP.NET MVC", "ASP.NET Core", "Web API", "HTML/CSS", "JavaScript", "jQuery", "SQL Server", "MySQL", "PostgreSQL", "Bitbucket"],
   },
   {
-    hash: "4be0d2e",
-    branch: "support-assistance",
-    role: { pt: "Assistente de Suporte", en: "Support Assistant" },
-    period: { pt: "abr 2022 — fev 2023", en: "Apr 2022 — Feb 2023" },
-    tags: ["Web App", "Deploy", "Databases", "Docs"],
-    bullets: {
-      pt: [
-        { title: "Ferramenta interna", body: "Desenvolvi uma aplicação web com features e informações para apoiar o time de suporte técnico." },
-        { title: "Deploy & recuperação", body: "Implantações remotas de sistemas desktop e bancos de dados; restauração de aplicações e bases corrompidas." },
-        { title: "Atendimento consultivo", body: "Diagnóstico de problemas via chamadas e tickets, documentação de regras de negócio." },
-      ],
-      en: [
-        { title: "Internal tooling", body: "Built a web app with features and information to support the technical support team." },
-        { title: "Deploy & recovery", body: "Remote deployments of desktop systems and databases; restoration of corrupted apps and databases." },
-        { title: "Consultative support", body: "Diagnosing issues through calls and tickets, documenting business rules." },
-      ],
-    },
+    title: { pt: "Assistente de Suporte", en: "Support Assistant" },
+    period: { pt: "abril de 2022 — fevereiro de 2023", en: "April 2022 — February 2023" },
+    bullets: [
+      {
+        pt: "Desenvolvimento de uma aplicação web com funcionalidades e informações de apoio ao time de suporte técnico, melhorando a eficiência e a organização.",
+        en: "Built a web application with features and information to support the technical support team, improving efficiency and organization.",
+      },
+      {
+        pt: "Implantações remotas de sistemas desktop e bancos de dados para clientes; restauração de aplicações e bases corrompidas.",
+        en: "Remote deployments of desktop systems and databases for clients; restoration of corrupted applications and databases.",
+      },
+      {
+        pt: "Atendimento direto a clientes por chamadas e tickets, suporte consultivo e documentação de regras de negócio.",
+        en: "Direct customer support through calls and tickets, consultative assistance and business rules documentation.",
+      },
+      {
+        pt: "Apoio a estagiários em tickets e no entendimento dos produtos.",
+        en: "Helped interns with support tickets and product understanding.",
+      },
+    ],
   },
   {
-    hash: "19c5a07",
-    branch: "support-intern",
-    role: { pt: "Estagiário de Suporte", en: "Support Intern" },
-    period: { pt: "dez 2021 — abr 2022", en: "Dec 2021 — Apr 2022" },
-    tags: ["Support", "Deploy"],
-    bullets: {
-      pt: [
-        { title: "git init", body: "Onde tudo começou: apoio em implantações remotas e atendimento técnico, abrindo e resolvendo chamados." },
-      ],
-      en: [
-        { title: "git init", body: "Where it all started: assisting remote deployments and technical support, opening and resolving tickets." },
-      ],
-    },
-  },
-];
-
-export type Project = {
-  name: string;
-  repo: string;
-  lang: string;
-  color: string;
-  desc: Record<Lang, string>;
-  kind: Record<Lang, string>;
-};
-
-export const projects: Project[] = [
-  {
-    name: "api-structure",
-    repo: "api-structure",
-    lang: "C#",
-    color: "#178600",
-    kind: { pt: "Arquitetura", en: "Architecture" },
-    desc: {
-      pt: "Estrutura base de Web API em .NET com camadas bem definidas — o esqueleto que eu uso pra começar serviços limpos.",
-      en: "A layered .NET Web API foundation — the skeleton I use to kick off clean services.",
-    },
-  },
-  {
-    name: "mindcare-central-clinic",
-    repo: "mindcare-central-clinic",
-    lang: "C#",
-    color: "#178600",
-    kind: { pt: "Web App", en: "Web App" },
-    desc: {
-      pt: "Painel de controle web para uma clínica de saúde psicológica: agenda, pacientes e acompanhamento.",
-      en: "A web control panel for a psychological health clinic: scheduling, patients and follow-ups.",
-    },
-  },
-  {
-    name: "pivotal-api",
-    repo: "pivotal-api",
-    lang: "C#",
-    color: "#178600",
-    kind: { pt: "Web API", en: "Web API" },
-    desc: {
-      pt: "Web API REST em ASP.NET Core explorando boas práticas de rotas, DTOs e persistência.",
-      en: "REST Web API in ASP.NET Core exploring good practices for routing, DTOs and persistence.",
-    },
-  },
-  {
-    name: "ls-ava",
-    repo: "ls-ava",
-    lang: "C#",
-    color: "#178600",
-    kind: { pt: "Universidade", en: "University" },
-    desc: {
-      pt: "Ambiente Virtual de Aprendizagem (AVA) — plataforma escolar construída na La Salle.",
-      en: "Virtual Learning Environment (AVA) — a school platform built at La Salle.",
-    },
-  },
-  {
-    name: "pygame_cgraph",
-    repo: "pygame_cgraph",
-    lang: "Python",
-    color: "#3572A5",
-    kind: { pt: "Computação Gráfica", en: "Computer Graphics" },
-    desc: {
-      pt: "Experimentos de computação gráfica com Pygame: transformações, rasterização e renderização na mão.",
-      en: "Computer graphics experiments with Pygame: transforms, rasterization and hand-rolled rendering.",
-    },
-  },
-  {
-    name: "BPP",
-    repo: "BPP",
-    lang: "C#",
-    color: "#178600",
-    kind: { pt: "Boas práticas", en: "Best practices" },
-    desc: {
-      pt: "Estudos de Clean Code, Refactoring e Design Patterns aplicados em C#.",
-      en: "Clean Code, Refactoring and Design Patterns studies applied in C#.",
-    },
+    title: { pt: "Estagiário de Suporte", en: "Support Intern" },
+    period: { pt: "dezembro de 2021 — abril de 2022", en: "December 2021 — April 2022" },
+    bullets: [
+      {
+        pt: "Apoio em implantações remotas de sistemas desktop e bancos de dados, garantindo a configuração inicial correta.",
+        en: "Assisted remote deployments of desktop systems and databases, ensuring proper initial configuration.",
+      },
+      {
+        pt: "Atuação direta no suporte técnico: atendimento de chamadas e abertura e resolução de tickets.",
+        en: "Direct involvement in technical support: handling calls, opening and resolving tickets.",
+      },
+    ],
   },
 ];
 
-export const stack = [
-  { group: "Languages & Frameworks", items: ["C#", ".NET 5–10", "ASP.NET", "Blazor", "MudBlazor", "Dart", "Flutter", "Python", "JavaScript", "jQuery", "HTML", "CSS", "Bootstrap"] },
-  { group: "Databases", items: ["SQL Server", "MySQL", "PostgreSQL", "MySQL Workbench", "phpMyAdmin"] },
-  { group: "Tools", items: ["Postman", "Swagger", "Bitbucket", "Git", "Android Studio", "Visual Studio"] },
-  { group: "Methodologies", items: ["Agile", "Scrum", "Clean Code", "Code Review"] },
+export const skills: { group: L; items: string[] }[] = [
+  { group: { pt: "Back-end e web", en: "Back end and web" }, items: ["C#", ".NET (5–10)", "ASP.NET Core", "ASP.NET MVC", "Web API / REST", "Blazor", "MudBlazor", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"] },
+  { group: { pt: "Bancos de dados", en: "Databases" }, items: ["SQL Server", "MySQL", "PostgreSQL", "MySQL Workbench", "phpMyAdmin"] },
+  { group: { pt: "Ferramentas", en: "Tools" }, items: ["Postman", "Swagger", "Bitbucket", "Git"] },
+  { group: { pt: "Metodologias", en: "Methodologies" }, items: ["Agile", "Scrum", "Clean Code"] },
+  { group: { pt: "Outras", en: "Also" }, items: ["Dart", "Flutter", "Python"] },
 ];
 
-export const education = [
+export const education: { school: string; place: string; period: L; title: L; note?: L }[] = [
   {
     school: "Universidade La Salle",
     place: "Canoas",
-    period: "2023 — ",
-    title: { pt: "Bacharelado em Ciência da Computação", en: "B.Sc. in Computer Science" },
-    note: { pt: "7º semestre", en: "7th semester" },
-    progress: 0.85,
+    period: { pt: "2023 — presente", en: "2023 — present" },
+    title: { pt: "Bacharelado em Ciência da Computação", en: "Bachelor in Computer Science" },
+    note: { pt: "Cursando o 7º semestre", en: "Currently in the 7th semester" },
   },
   {
     school: "Faculdade de Tecnologia SENAI",
     place: "Porto Alegre",
-    period: "2021 — 2022",
+    period: { pt: "2021 — 2022", en: "2021 — 2022" },
     title: { pt: "Técnico em Desenvolvimento de Sistemas", en: "Systems Development Technician" },
-    note: { pt: "C, C#, .NET, Arduino, low & high level", en: "C, C#, .NET, Arduino, low & high level" },
-    progress: 1,
+    note: { pt: "C, C#, .NET, Swagger, phpMyAdmin, VirtualBox, Arduino", en: "C, C#, .NET, Swagger, phpMyAdmin, VirtualBox, Arduino" },
   },
   {
     school: "Wizard by Pearson",
     place: "Canoas",
-    period: "2012 — 2016",
+    period: { pt: "2012 — 2016", en: "2012 — 2016" },
     title: { pt: "Inglês", en: "English" },
-    note: { pt: "Leitura, escrita e conversação", en: "Reading, writing and speaking" },
-    progress: 1,
+    note: { pt: "Leitura, escrita e conversação sem grandes dificuldades", en: "I can talk, read and write without much difficulty" },
   },
 ];
 
-export const t = {
-  pt: {
-    nav: { about: "Sobre", flow: "Pagamentos", work: "Experiência", projects: "Projetos", stack: "Stack", contact: "Contato" },
-    terminalHint: "terminal",
-    hero: {
-      status: "Disponível para novos desafios",
-      role: "Full Stack Software Engineer",
-      line1: "Eu construo sistemas",
-      line2: "que não podem cair.",
-      sub: "3+ anos com .NET e C# em aplicações web, APIs e sistemas de pagamento de missão crítica. Hoje no time de desenvolvimento da Rodosoft.",
-      ctaWork: "Ver trabalho",
-      ctaTalk: "Falar comigo",
-      local: "Hora local",
-      lens: "passe o mouse ou toque — raio-x",
-          },
-    about: {
-      eyebrow: "01 / Sobre",
-      text: "Comecei atendendo chamados de suporte e hoje desenvolvo fluxos de pagamento ponta a ponta. Essa trajetória me deu algo raro: entendo o código e entendo quem sofre quando ele quebra. Gosto de arquitetura limpa, código legível, documentação que alguém realmente lê e de ajudar quem está chegando agora.",
-      stats: [
-        { value: 3, suffix: "+", label: "anos com .NET & C#" },
-        { value: 3, suffix: "", label: "cargos na mesma empresa" },
-        { value: 37, suffix: "", label: "repositórios públicos" },
-        { value: 7, suffix: "º", label: "semestre de Ciência da Computação" },
-      ],
-    },
-    flow: {
-      eyebrow: "02 / Missão crítica",
-      title: "Cada request é dinheiro de alguém.",
-      sub: "Integração de adquirentes, regras de negócio complexas, estornos e alta disponibilidade. Abaixo, uma simulação do tipo de fluxo que eu construo — ao vivo.",
-      approved: "APROVADA",
-      declined: "NEGADA",
-      log: "transaction.log",
-      fire: "Disparar transação",
-      nodes: ["App / POS", "API .NET", "Regras", "Adquirente", "Emissor"],
-      tps: "transações",
-      rate: "aprovação",
-      latency: "latência média",
-    },
-    work: { eyebrow: "03 / Experiência", title: "git log --career", company: "Rodosoft Tecnologia", note: "Mesma empresa, três commits. De estagiário de suporte a desenvolvedor." },
-    projects: { eyebrow: "04 / Projetos", title: "Coisas que eu escrevi", open: "abrir repo", live: "Atividade recente no GitHub", loading: "buscando commits…", all: "ver todos os repositórios" },
-    stack: { eyebrow: "05 / Stack", title: "Dependências instaladas", restore: "dotnet restore", restored: "Restauração concluída" },
-    edu: { eyebrow: "06 / Formação", title: "Formação" },
-    contact: {
-      eyebrow: "07 / Contato",
-      title1: "Vamos construir",
-      title2: "algo que dure?",
-      sub: "Aberto a oportunidades, projetos e boas conversas sobre .NET, arquitetura e sistemas de pagamento.",
-      copy: "clique para copiar",
-      copied: "copiado!",
-    },
-    footer: "Construído do zero com Next.js, React, TypeScript, Tailwind e Motion.",
+export const projects: { name: string; lang: string; desc: L }[] = [
+  {
+    name: "mindcare-central-clinic",
+    lang: "C#",
+    desc: { pt: "Painel web de controle para uma clínica de saúde psicológica.", en: "A web control panel for a psychological health clinic." },
   },
-  en: {
-    nav: { about: "About", flow: "Payments", work: "Experience", projects: "Projects", stack: "Stack", contact: "Contact" },
-    terminalHint: "terminal",
-    hero: {
-      status: "Open to new challenges",
-      role: "Full Stack Software Engineer",
-      line1: "I build systems",
-      line2: "that can't go down.",
-      sub: "3+ years with .NET and C# across web apps, APIs and mission-critical payment systems. Currently on the development team at Rodosoft.",
-      ctaWork: "See my work",
-      ctaTalk: "Get in touch",
-      local: "Local time",
-      lens: "hover or tap — x-ray mode",
-          },
-    about: {
-      eyebrow: "01 / About",
-      text: "I started out answering support tickets and today I build end-to-end payment flows. That path gave me something rare: I understand the code and I understand who suffers when it breaks. I care about clean architecture, readable code, documentation people actually read, and helping newcomers grow.",
-      stats: [
-        { value: 3, suffix: "+", label: "years with .NET & C#" },
-        { value: 3, suffix: "", label: "roles at the same company" },
-        { value: 37, suffix: "", label: "public repositories" },
-        { value: 7, suffix: "th", label: "semester of Computer Science" },
-      ],
-    },
-    flow: {
-      eyebrow: "02 / Mission critical",
-      title: "Every request is someone's money.",
-      sub: "Acquirer integrations, complex business rules, refunds and high availability. Below is a live simulation of the kind of flow I build.",
-      approved: "APPROVED",
-      declined: "DECLINED",
-      log: "transaction.log",
-      fire: "Fire a transaction",
-      nodes: ["App / POS", ".NET API", "Rules", "Acquirer", "Issuer"],
-      tps: "transactions",
-      rate: "approval",
-      latency: "avg latency",
-    },
-    work: { eyebrow: "03 / Experience", title: "git log --career", company: "Rodosoft Tecnologia", note: "Same company, three commits. From support intern to developer." },
-    projects: { eyebrow: "04 / Projects", title: "Things I wrote", open: "open repo", live: "Recent GitHub activity", loading: "fetching commits…", all: "see all repositories" },
-    stack: { eyebrow: "05 / Stack", title: "Installed dependencies", restore: "dotnet restore", restored: "Restore complete" },
-    edu: { eyebrow: "06 / Education", title: "Education" },
-    contact: {
-      eyebrow: "07 / Contact",
-      title1: "Shall we build",
-      title2: "something that lasts?",
-      sub: "Open to opportunities, projects and good conversations about .NET, architecture and payment systems.",
-      copy: "click to copy",
-      copied: "copied!",
-    },
-    footer: "Built from scratch with Next.js, React, TypeScript, Tailwind and Motion.",
+  {
+    name: "ls-ava",
+    lang: "C#",
+    desc: { pt: "Ambiente Virtual de Aprendizagem (AVA) para o ambiente escolar.", en: "Virtual Learning Environment (AVA) for schools." },
   },
-} as const;
-
-export type Dict = (typeof t)[Lang];
+  {
+    name: "BPP",
+    lang: "C#",
+    desc: { pt: "Boas práticas de código baseadas em Clean Code, Refactoring e Design Patterns.", en: "Coding good practices based on Clean Code, Refactoring and Design Patterns." },
+  },
+  {
+    name: "pivotal-api",
+    lang: "C#",
+    desc: { pt: "Projeto de Web API.", en: "Web API project." },
+  },
+];
