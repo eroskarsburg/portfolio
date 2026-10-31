@@ -102,7 +102,7 @@ export type Role = {
   period: L;
   current?: boolean;
   intro?: L;
-  groups?: { title: L; body: L; wide?: boolean }[];
+  groups?: { title: L; body: L }[];
   bullets?: L[];
   tools?: string[];
 };
@@ -114,18 +114,10 @@ export const roles: Role[] = [
     current: true,
     groups: [
       {
-        title: { pt: "Do escopo à operação", en: "From scope to operation" },
-        wide: true,
-        body: {
-          pt: "Planejo tudo, de ponta a ponta: o escopo do projeto, a implementação, a entrega e o monitoramento depois que está no ar.",
-          en: "I plan everything, end to end: the project scope, the implementation, the delivery and the monitoring once it is live.",
-        },
-      },
-      {
         title: { pt: "Integrações de pagamento", en: "Payment integrations" },
         body: {
-          pt: "Condução de novas integrações nos produtos de pagamento. Ownership completo de um novo fluxo de pagamento, incluindo a integração com uma nova adquirente, regras de negócio complexas e consumo de APIs externas em .NET e C#.",
-          en: "Leading new integrations in the payment products. Full ownership of a new payment flow, including the integration of a new payment acquirer, complex business rules and consumption of external APIs using .NET and C#.",
+          pt: "Condução de novas integrações nos produtos de pagamento, planejando tudo: do escopo à implementação, à entrega e ao monitoramento. Ownership completo de um novo fluxo de pagamento, incluindo a integração com uma nova adquirente, regras de negócio complexas e consumo de APIs externas em .NET e C#.",
+          en: "Leading new integrations in the payment products, planning everything: from scope to implementation, delivery and monitoring. Full ownership of a new payment flow, including the integration of a new payment acquirer, complex business rules and consumption of external APIs using .NET and C#.",
         },
       },
       {

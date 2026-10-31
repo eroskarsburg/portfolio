@@ -34,7 +34,7 @@ export function Experience() {
               {role.groups && (
                 <dl className="grid gap-x-12 gap-y-7 md:grid-cols-2">
                   {role.groups.map((g) => (
-                    <div key={g.title.en} className={g.wide ? "md:col-span-2" : undefined}>
+                    <div key={g.title.en}>
                       <dt className="font-mono text-xs uppercase tracking-widest text-red">{g.title[lang]}</dt>
                       <dd className="mt-2 leading-relaxed text-muted">{g.body[lang]}</dd>
                     </div>
