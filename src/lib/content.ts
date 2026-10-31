@@ -16,7 +16,7 @@ export const ui = {
     hero: {
       title: "Full Stack Software Engineer · .NET / C#",
       headline: "Aplicações web, APIs e backoffices para produtos de pagamento.",
-      sub: "Mais de 3 anos de experiência em .NET e C#. Conduzo integrações com parceiros, refatoro aplicações e crio novas interfaces em sistemas de pagamento de missão crítica.",
+      sub: "Mais de 3 anos de experiência em .NET e C#. Planejo cada projeto do escopo ao monitoramento, conduzo integrações com parceiros, refatoro aplicações e crio novas interfaces em sistemas de pagamento de missão crítica.",
       ctaExperience: "Ver experiência",
       ctaContact: "Entrar em contato",
       facts: [
@@ -57,7 +57,7 @@ export const ui = {
     hero: {
       title: "Full Stack Software Engineer · .NET / C#",
       headline: "Web applications, APIs and back offices for payment products.",
-      sub: "3+ years of experience with .NET and C#. I lead partner integrations, refactor applications and build new interfaces for mission-critical payment systems.",
+      sub: "3+ years of experience with .NET and C#. I plan each project from scope to monitoring, lead partner integrations, refactor applications and build new interfaces for mission-critical payment systems.",
       ctaExperience: "See experience",
       ctaContact: "Get in touch",
       facts: [
@@ -102,7 +102,7 @@ export type Role = {
   period: L;
   current?: boolean;
   intro?: L;
-  groups?: { title: L; body: L }[];
+  groups?: { title: L; body: L; wide?: boolean }[];
   bullets?: L[];
   tools?: string[];
 };
@@ -113,6 +113,14 @@ export const roles: Role[] = [
     period: { pt: "março de 2023 — presente", en: "March 2023 — present" },
     current: true,
     groups: [
+      {
+        title: { pt: "Do escopo à operação", en: "From scope to operation" },
+        wide: true,
+        body: {
+          pt: "Planejo tudo, de ponta a ponta: o escopo do projeto, a implementação, a entrega e o monitoramento depois que está no ar.",
+          en: "I plan everything, end to end: the project scope, the implementation, the delivery and the monitoring once it is live.",
+        },
+      },
       {
         title: { pt: "Integrações de pagamento", en: "Payment integrations" },
         body: {

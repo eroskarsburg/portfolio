@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLang } from "./LangProvider";
 
 export function Nav() {
@@ -17,7 +18,7 @@ export function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-bg/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6">
         <a href="#top" className="flex items-center gap-3 font-mono text-sm">
-          <span className="grid h-8 w-8 place-items-center border border-red font-display text-base font-extrabold text-red">E</span>
+          <Image src="/logo.svg" alt="" width={32} height={32} priority className="h-8 w-8" />
           <span className="hidden sm:inline">
             eros<span className="text-red">.</span>karsburg
           </span>
