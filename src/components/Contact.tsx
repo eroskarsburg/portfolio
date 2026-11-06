@@ -24,10 +24,10 @@ export function Contact() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-4 py-5 transition-colors hover:text-red"
+                className="group flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-5 transition-colors hover:text-red sm:flex-nowrap"
               >
-                <span className="w-28 shrink-0 font-mono text-xs uppercase tracking-widest text-muted">{label}</span>
-                <span className="flex-1 break-all font-display text-xl font-semibold sm:text-3xl">{text}</span>
+                <span className="w-full shrink-0 font-mono sm:w-28 text-xs uppercase tracking-widest text-muted">{label}</span>
+                <span className="min-w-0 flex-1 font-display [overflow-wrap:anywhere] text-xl font-semibold sm:text-3xl">{text}</span>
                 <span className="text-red transition-transform group-hover:translate-x-1">↗</span>
               </a>
             </li>
