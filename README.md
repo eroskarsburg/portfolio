@@ -1,6 +1,6 @@
 # Eros Karsburg — Portfolio
 
-Portfólio pessoal de **Eros Karsburg**, Full Stack Software Engineer (.NET / C#), com foco na experiência profissional e no currículo.
+Portfólio pessoal de **Eros Karsburg**, desenvolvedor Full Stack pleno (.NET / C#), com foco na experiência profissional e no currículo.
 
 Feito com **Next.js 16 (App Router)**, **React 19**, **TypeScript** e **Tailwind CSS 4**.
 

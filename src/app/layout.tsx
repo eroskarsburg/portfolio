@@ -13,9 +13,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eros Karsburg — Full Stack Software Engineer",
+  title: "Eros Karsburg — Desenvolvedor Full Stack Pleno",
   description:
-    "Full Stack Software Engineer com 3+ anos em .NET e C#: aplicações web, APIs, backoffices e integrações de pagamento.",
+    "Desenvolvedor Full Stack Pleno com 3+ anos em .NET e C#: aplicações web, APIs, backoffices e integrações de pagamento.",
 };
 
 export const viewport: Viewport = {

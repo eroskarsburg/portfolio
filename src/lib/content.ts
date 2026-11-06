@@ -14,7 +14,7 @@ export const ui = {
   pt: {
     nav: { about: "Sobre", experience: "Experiência", skills: "Skills", education: "Formação", contact: "Contato", theme: "Alternar tema claro/escuro" },
     hero: {
-      title: "Full Stack Software Engineer · .NET / C#",
+      title: "Desenvolvedor Full Stack Pleno · .NET / C#",
       headline: "Aplicações web, APIs e backoffices para produtos de pagamento.",
       sub: "Mais de 3 anos de experiência em .NET e C#. Planejo cada projeto do escopo ao monitoramento, conduzo integrações com parceiros, refatoro aplicações e crio novas interfaces em sistemas de pagamento de missão crítica.",
       ctaExperience: "Ver experiência",
@@ -30,8 +30,8 @@ export const ui = {
       eyebrow: "Sobre",
       title: "Resumo",
       body: [
-        "Full Stack Software Engineer com mais de 3 anos de experiência em .NET e C#, especializado em aplicações web, APIs e sistemas de pagamento de missão crítica.",
-        "Sólida vivência em arquitetura e desenvolvimento de software, liderança técnica e mentoria de time, com foco em qualidade de código, escalabilidade e boas práticas. Experiência com Scrum, integrações com terceiros e ambientes de alta disponibilidade.",
+        "Desenvolvedor de Software Full Stack Pleno com mais de 3 anos de experiência em .NET e C#, especializado em aplicações web, APIs e sistemas de pagamento de missão crítica.",
+        "Sólida vivência em arquitetura e desenvolvimento de software, liderança técnica e mentoria de time, com foco em qualidade de código, escalabilidade e boas práticas. Experiência com Scrum, integrações com terceiros, pipelines de CI/CD, testes automatizados e ambientes de alta disponibilidade.",
       ],
     },
     experience: {
@@ -39,7 +39,7 @@ export const ui = {
       title: "Experiência profissional",
       company: "Rodosoft Tecnologia",
       companyNote: "Presencial · desde dezembro de 2021",
-      companySub: "Três cargos na mesma empresa, de estagiário de suporte a desenvolvedor.",
+      companySub: "Três cargos na mesma empresa, de estagiário de suporte a desenvolvedor pleno.",
       tools: "Ferramentas",
       current: "Atual",
     },
@@ -55,7 +55,7 @@ export const ui = {
   en: {
     nav: { about: "About", experience: "Experience", skills: "Skills", education: "Education", contact: "Contact", theme: "Toggle light/dark theme" },
     hero: {
-      title: "Full Stack Software Engineer · .NET / C#",
+      title: "Mid-Level Full Stack Software Developer · .NET / C#",
       headline: "Web applications, APIs and back offices for payment products.",
       sub: "3+ years of experience with .NET and C#. I plan each project from scope to monitoring, lead partner integrations, refactor applications and build new interfaces for mission-critical payment systems.",
       ctaExperience: "See experience",
@@ -71,8 +71,8 @@ export const ui = {
       eyebrow: "About",
       title: "Summary",
       body: [
-        "Full Stack Software Engineer with over 3 years of experience in .NET and C#, specializing in web applications, APIs and mission-critical payment systems.",
-        "Strong hands-on background in software architecture, development, technical leadership and team mentoring, with a focus on code quality, scalability and best practices. Experienced with Scrum, third-party integrations and high-availability environments.",
+        "Mid-Level Full Stack Software Developer with over 3 years of experience in .NET and C#, specializing in web applications, APIs and mission-critical payment systems.",
+        "Strong hands-on background in software architecture, development, technical leadership and team mentoring, with a focus on code quality, scalability and best practices. Experienced with Scrum, third-party integrations, CI/CD pipelines, automated testing and high-availability environments.",
       ],
     },
     experience: {
@@ -80,7 +80,7 @@ export const ui = {
       title: "Professional experience",
       company: "Rodosoft Tecnologia",
       companyNote: "On-site · since December 2021",
-      companySub: "Three roles at the same company, from support intern to developer.",
+      companySub: "Three roles at the same company, from support intern to mid-level developer.",
       tools: "Tools",
       current: "Current",
     },
@@ -109,10 +109,45 @@ export type Role = {
 
 export const roles: Role[] = [
   {
-    title: { pt: "Software Developer", en: "Software Developer" },
+    title: { pt: "Desenvolvedor Pleno de Software .NET", en: "Mid-Level .NET Software Developer" },
     period: { pt: "março de 2023 — presente", en: "March 2023 — present" },
     current: true,
     groups: [
+      {
+        title: { pt: "Liderança técnica de gateway de pagamentos", en: "Payment gateway technical leadership" },
+        body: {
+          pt: "Liderança da reformulação completa da API e do dashboard de um gateway de pagamentos existente, do escopo à entrega final, com a integração de 2 novos provedores parceiros para transações PIX. Interlocução com equipes técnicas internas e dos parceiros e condução de reuniões de alinhamento.",
+          en: "Led the complete redesign of an existing payment gateway's API and dashboard, from scoping to final delivery, integrating 2 new partner providers for PIX transactions. Served as the point of contact for internal and partner technical teams and led alignment meetings.",
+        },
+      },
+      {
+        title: { pt: "Arquitetura e back-end", en: "Architecture and back end" },
+        body: {
+          pt: "Reestruturação da API em .NET 10 e ASP.NET Core, com nova arquitetura e organização do projeto, CQRS com MediatR, EF Core, integrações resilientes com Refit e Polly, jobs com Hangfire e autenticação via JWT e certificado de cliente. Criação da documentação do projeto.",
+          en: "Restructured the API with .NET 10 and ASP.NET Core, introducing a new architecture and project organization, CQRS with MediatR, EF Core, resilient integrations with Refit and Polly, background jobs with Hangfire, and JWT and client certificate authentication. Created the project documentation.",
+        },
+      },
+      {
+        title: { pt: "Redesign do dashboard", en: "Dashboard redesign" },
+        body: {
+          pt: "Redesenho completo da interface com Razor, Bootstrap e Chart.js, proporcionando uma experiência mais moderna, agradável e profissional.",
+          en: "Completely redesigned the interface with Razor, Bootstrap and Chart.js, delivering a more modern, polished and professional experience.",
+        },
+      },
+      {
+        title: { pt: "CI/CD e testes automatizados", en: "CI/CD and test automation" },
+        body: {
+          pt: "Implementação de pipelines de CI/CD com runners self-hosted no GitHub Actions e no Bitbucket, incluindo build com Docker e deploy em staging e produção. Testes unitários, de integração e E2E com xUnit, Testcontainers e Playwright.",
+          en: "Implemented CI/CD pipelines with self-hosted runners on GitHub Actions and Bitbucket, including Docker builds and deployments to staging and production. Built unit, integration and E2E tests with xUnit, Testcontainers and Playwright.",
+        },
+      },
+      {
+        title: { pt: "Padronização de repositórios", en: "Repository standardization" },
+        body: {
+          pt: "Definição do padrão de repositórios da organização no GitHub, abrangendo estratégia de branches, pipelines e atualização de dependências com Dependabot.",
+          en: "Defined the organization's GitHub repository standard, covering branching strategy, pipelines and automated dependency updates with Dependabot.",
+        },
+      },
       {
         title: { pt: "Integrações de pagamento", en: "Payment integrations" },
         body: {
@@ -176,7 +211,7 @@ export const roles: Role[] = [
         en: "I have also contributed to the company's Android app, on purchase, refund and ticket recovery flows.",
       },
     ],
-    tools: ["C#", ".NET Framework", ".NET", "ASP.NET MVC", "ASP.NET Core", "Web API", "HTML/CSS", "JavaScript", "jQuery", "SQL Server", "MySQL", "PostgreSQL", "Bitbucket"],
+    tools: ["C#", ".NET Framework", ".NET 10", "ASP.NET MVC", "ASP.NET Core", "Web API", "EF Core", "MediatR", "Hangfire", "HTML/CSS", "JavaScript", "jQuery", "SQL Server", "MySQL", "PostgreSQL", "Docker", "GitHub Actions", "Bitbucket", "Dependabot", "xUnit", "Testcontainers", "Playwright"],
   },
   {
     title: { pt: "Assistente de Suporte", en: "Support Assistant" },
@@ -217,9 +252,9 @@ export const roles: Role[] = [
 ];
 
 export const skills: { group: L; items: string[] }[] = [
-  { group: { pt: "Back-end e web", en: "Back end and web" }, items: ["C#", ".NET (5–10)", "ASP.NET Core", "ASP.NET MVC", "Web API / REST", "Blazor", "MudBlazor", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"] },
+  { group: { pt: "Back-end e web", en: "Back end and web" }, items: ["C#", ".NET (5–10)", "ASP.NET Core", "ASP.NET MVC", "Web API / REST", "EF Core", "MediatR", "Blazor", "MudBlazor", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"] },
   { group: { pt: "Bancos de dados", en: "Databases" }, items: ["SQL Server", "MySQL", "PostgreSQL", "MySQL Workbench", "phpMyAdmin"] },
-  { group: { pt: "Ferramentas", en: "Tools" }, items: ["Postman", "Swagger", "Bitbucket", "Git"] },
+  { group: { pt: "Ferramentas", en: "Tools" }, items: ["Docker", "GitHub Actions", "Bitbucket", "Git", "Dependabot", "Hangfire", "xUnit", "Testcontainers", "Playwright", "Cursor", "Codex", "Kiro", "Antigravity", "Postman", "Swagger"] },
   { group: { pt: "Metodologias", en: "Methodologies" }, items: ["Agile", "Scrum", "Clean Code"] },
   { group: { pt: "Outras", en: "Also" }, items: ["Dart", "Flutter", "Python"] },
 ];
@@ -228,7 +263,7 @@ export const education: { school: string; place: string; period: L; title: L; no
   {
     school: "Universidade La Salle",
     place: "Canoas",
-    period: { pt: "2023 — presente", en: "2023 — present" },
+    period: { pt: "2023 — 2027", en: "2023 — 2027" },
     title: { pt: "Bacharelado em Ciência da Computação", en: "Bachelor in Computer Science" },
     note: { pt: "Cursando o 7º semestre", en: "Currently in the 7th semester" },
   },
