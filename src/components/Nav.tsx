@@ -20,12 +20,12 @@ export function Nav() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6">
         <a href="#top" className="flex items-center gap-3 font-mono text-sm">
           <Image src="/logo.svg" alt="" width={32} height={32} priority className="h-8 w-8" />
-          <span className="hidden sm:inline">
+          <span className="hidden sm:inline md:hidden lg:inline">
             eros<span className="text-red">.</span>karsburg
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-8">
           {links.map(([href, label]) => (
             <a key={href} href={href} className="font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:text-ink">
               {label}
